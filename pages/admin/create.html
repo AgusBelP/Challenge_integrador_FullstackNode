@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Item | Funkoshop</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <picture>
+          <a href="./index.html">
+            <img src="./img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop" />
+          </a>
+        </picture>
+        <ul>
+          <li><a href="./pages/shop/shop.html">SHOP</a></li>
+          <li><a href="./pages/admin/contact.html">CONTACTO</a></li>
+          <li><a href="./pages/admin/login.html">LOGIN</a></li>
+          <li>
+            <a href="./pages/cart.html">
+              <img src="./img/icons/cart-icon.svg" alt="icono de carrito" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>CREAR NUEVO ITEM</h2>
+      <form action="">
+        <label for="categoria">Categoría</label>
+        <select name="categoria" id="categoria" required>
+          <option value="" disabled selected hidden>Seleccionar</option>
+          <!-- disabled = grisado, selected = la primera opción que aparece, hidden = para que no aparezca entre las opciones del dropdown -->
+          <option value="Figuras Coleccionables">Figuras Coleccionables</option>
+          <option value="Llaveros">Llaveros</option>
+          <option value="Remeras">Remeras</option>
+        </select>
+        <label for="licencia">Licencia</label>
+        <select name="licencia" id="licencia" required>
+          <option value="" disabled selected hidden>Seleccionar</option>
+          <option value="starwars">Star Wars</option>
+          <option value="pokemon">Pokemon</option>
+          <option value="harypotter">Harry Potter</option>
+        </select>
+        <label for="nombre_producto">Nombre del producto</label>
+        <input type="text" id="nombre_producto" name="nombre_producto" placeholder="Nombre del producto" required />
+        <textarea
+          name="descripcion_producto"
+          id="descripcion_producto"
+          cols="30"
+          rows="10"
+          placeholder="Descripción del producto"
+          required></textarea>
+        <label for="sku">SKU</label>
+        <input type="text" id="sku" name="sku" placeholder="SSK111AB001" required />
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" data-type="currency" placeholder="$0.000,00" required />
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" placeholder="0 unidades" min="0" required />
+        <label for="descuento">Descuento</label>
+        <input type="number" name="descuento" id="descuento" placeholder="0%" min="0" max="100" step="5" required />
+        <label for="cuotas">Cuotas:</label>
+        <select name="cuotas" id="cuotas">
+          <option value="0">0 cuotas</option>
+          <option value="3">3 cuotas</option>
+          <option value="6">6 cuotas</option>
+          <option value="9">9 cuotas</option>
+          <option value="12">12 cuotas</option>
+          <option value="18">18 cuotas</option>
+          <option value="24">24 cuotas</option>
+        </select>
+        <label for="imagenes">Imágenes:</label>
+        <input type="file" name="imagenes" id="imagenes" value="Elegir archivos" multiple />
+        <p>No se ha seleccionado ningún archivo</p>
+        <input type="submit" value="Agregar Producto" />
+        <input type="reset" value="Limpiar" />
+      </form>
+    </main>
+    <footer>
+      <section>
+        <nav>
+          <ul>
+            <li><a href="./pages/shop.html">SHOP</a></li>
+            <li><a href="./pages/register.html">REGISTRARSE</a></li>
+            <li><a href="./pages/login.html">LOG IN</a></li>
+            <li><a href="./pages/contact.html">CONTACTO</a></li>
+            <picture>
+              <img src="./img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
+            </picture>
+          </ul>
+        </nav>
+      </section>
+      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    </footer>
+  </body>
+</html>
