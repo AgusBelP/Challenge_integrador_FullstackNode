@@ -5,53 +5,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop | Funkoshop</title>
+    <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <picture>
+      <nav class="navbar container">
+        <picture class="navbar__logo">
           <a href="./index.html">
-            <img src="./img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop" />
+            <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop" />
           </a>
         </picture>
-        <ul>
-          <li><a href="./pages/shop/shop.html">SHOP</a></li>
-          <li><a href="./pages/admin/contact.html">CONTACTO</a></li>
-          <li><a href="./pages/admin/login.html">LOGIN</a></li>
-          <li>
-            <a href="./pages/cart.html">
-              <img src="./img/icons/cart-icon.svg" alt="icono de carrito" />
+        <ul class="navbar__menu">
+          <li class="navbar__item with-submenu">
+            <a class="navbar__link with-icon" href="./pages/shop/shop.html"
+              >SHOP <iconify-icon icon="tabler:chevron-down"></iconify-icon
+            ></a>
+            <ul class="submenu">
+              <li class="submenu__item">
+                <a href="" class="submenu__link">Funkos</a>
+              </li>
+              <li class="submenu__item">
+                <a href="" class="submenu__link">Remeras</a>
+              </li>
+              <li class="submenu__item">
+                <a href="" class="submenu__link">Llaveros</a>
+              </li>
+            </ul>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./pages/admin/contact.html">CONTACTO</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__cart" href="./pages/cart.html">
+              <img src="/img/icons/cart-icon.svg" alt="icono de carrito" />
             </a>
           </li>
         </ul>
       </nav>
     </header>
-    <main>
-      <aside>
-        <label for="search">BUSCAR</label>
-        <input type="text" id="search" name="search" placeholder="item o categoria" />
-        <label for="sort">ORDENAR POR</label>
-        <select name="sort" id="sort">
-          <option value="az">A-Z</option>
-          <option value="za">Z-A</option>
-          <option value="desc">Mayor precio</option>
-          <option value="asc">Menor precio</option>
-        </select>
-        <span for="filter">PRECIO</span>
-        <label for="precio_min">MIN</label>
-        <input type="number" id="precio_min" name="precio_min" placeholder="0" />
-        <label>-</label>
-        <label for="precio_max">MAX</label>
-        <input type="number" id="precio_max" name="precio_max" placeholder="0" />
-        <label for="filter">FILTRAR</label>
-        <input type="checkbox" name="filter_new" id="filter_new" />
-        <label for="filter_new">NUEVOS</label>
-        <input type="checkbox" name="filter_ofertas" id="filter_ofertas" />
-        <label for="filter_ofertas">OFERTAS</label>
-        <input type="checkbox" name="filter_special_edition" id="filter_special_edition" />
-        <label for="filter_special_edition">EDICIÓN ESPECIAL</label>
-        <input type="checkbox" name="filter_favoritos" id="filter_favoritos" />
-        <label for="filter_favoritos">FAVORITOS</label>
+    <main class="shop_collection container">
+      <aside class="filter">
+        <div class="filter__content">
+          <label for="search" class="filter__title">BUSCAR</label>
+          <input type="text" id="search" name="search" placeholder="item o categoria" class="filter__input" />
+        </div>
+        <div class="filter__content">
+          <label for="sort" class="filter__title">ORDENAR POR</label>
+          <select name="sort" id="sort" class="filter__input">
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+            <option value="desc">Mayor precio</option>
+            <option value="asc">Menor precio</option>
+          </select>
+        </div>
+        <div class="filter__content">
+          <span for="filter" class="filter__title">PRECIO</span>
+          <div class="filter__price">
+            <div>
+              <label for="precio_min" class="filter__price-tag">MIN</label>
+              <input
+                type="text"
+                id="precio_min"
+                name="precio_min"
+                placeholder="0"
+                class="filter__input filter__price-value" />
+            </div>
+            <div>
+              <label for="precio_max" class="filter__price-tag"> - MAX</label>
+              <input
+                type="text"
+                id="precio_max"
+                name="precio_max"
+                placeholder="0"
+                class="filter__input filter__price-value" />
+            </div>
+          </div>
+        </div>
+        <div class="filter__content">
+          <label for="filter" class="filter__title">FILTRAR</label>
+          <div class="filter__options">
+            <input type="checkbox" name="filter_new" id="filter_new" class="filter__options-select" />
+            <label for="filter_new" class="filter__options-tag">NUEVOS</label>
+            <input type="checkbox" name="filter_ofertas" id="filter_ofertas" class="filter__options-select" />
+            <label for="filter_ofertas" class="filter__options-tag">OFERTAS</label>
+            <input
+              type="checkbox"
+              name="filter_special_edition"
+              id="filter_special_edition"
+              class="filter__options-select" />
+            <label for="filter_special_edition" class="filter__options-tag">EDICIÓN ESPECIAL</label>
+            <input type="checkbox" name="filter_favoritos" id="filter_favoritos" class="filter__options-select" />
+            <label for="filter_favoritos" class="filter__options-tag">FAVORITOS</label>
+          </div>
+        </div>
       </aside>
       <section>
         <ul>
@@ -202,21 +251,19 @@
         </div>
       </section>
     </main>
-    <footer>
-      <section>
-        <nav>
-          <ul>
-            <li><a href="./pages/shop.html">SHOP</a></li>
-            <li><a href="./pages/register.html">REGISTRARSE</a></li>
-            <li><a href="./pages/login.html">LOG IN</a></li>
-            <li><a href="./pages/contact.html">CONTACTO</a></li>
-            <picture>
-              <img src="./img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
-            </picture>
-          </ul>
-        </nav>
-      </section>
-      <p>All rights reserved 2023 - Funkoshop &copy;</p>
+    <footer class="footer">
+      <nav class="navbar container">
+        <ul class="navbar__item">
+          <li class="navbar__item"><a class="navbar__link" href="./pages/shop.html">SHOP</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="./pages/register.html">REGISTRARSE</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="./pages/login.html">LOG IN</a></li>
+          <li class="navbar__item"><a class="navbar__link" href="./pages/contact.html">CONTACTO</a></li>
+        </ul>
+        <picture>
+          <img src="/img/branding/isotype.svg" alt="Isotipo de la marca Funkoshop" />
+        </picture>
+      </nav>
+      <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
   </body>
 </html>

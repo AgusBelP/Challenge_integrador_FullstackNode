@@ -38,7 +38,7 @@
   --font-small: 1.6em;
   --font-xsmall: 1.4em;
 
-  /* Spcings */
+  /* Spacings */
 
   --spacing-128: 12.8rem; /* 1rem = 10px */
   --spacing-68: 6.8rem;
@@ -98,6 +98,8 @@ ol {
 }
 
 /* ----------------- Fin normalización de variables ----------------- */
+
+/* ----------------- Index ----------------- */
 
 /* Header */
 
@@ -378,3 +380,84 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   text-align: center;
   margin-top: var(--spacing-36);
 }
+
+/* ----------------- Shop  ----------------- */
+
+/* Aside */
+
+.shop_collection {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  padding: var(--spacing-16) 0;
+  gap: var(--spacing-16);
+  justify-items: center;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
+
+.filter__content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--spacing-8);
+}
+
+.filter__title {
+  font-family: var(--base-font);
+  font-size: var(--font-large);
+  font-weight: 500;
+}
+
+.filter__input {
+  border: 2px solid var(--dark-bg-solid);
+  border-radius: 6px;
+  padding: var(--spacing-8);
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 500;
+}
+
+.filter__price {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: var(--spacing-16);
+}
+
+.filter__price-tag {
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  font-weight: 500;
+  padding-right: var(--spacing-12);
+}
+
+.filter__price-value {
+  text-align: center;
+  width: 60px;
+  height: 28px;
+}
+
+.filter__options {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  row-gap: var(--spacing-8);
+}
+
+.filter__options-tag {
+  font-family: var(--base-font);
+  font-weight: 500;
+  font-size: var(--font-medium);
+}
+
+.filter__options-select {
+  border: 2px solid var(--primary-solid);
+  border-radius: 1px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Main */
