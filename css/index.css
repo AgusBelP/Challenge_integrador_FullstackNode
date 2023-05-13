@@ -1,3 +1,5 @@
+/* ----------------- Normalización de variables ----------------- */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap");
 
 :root {
@@ -34,7 +36,7 @@
   --font-large: 2.4em;
   --font-medium: 1.8em;
   --font-small: 1.6em;
-  --font-xsmall: 1.2em;
+  --font-xsmall: 1.4em;
 
   /* Spcings */
 
@@ -42,6 +44,8 @@
   --spacing-68: 6.8rem;
   --spacing-36: 3.6rem;
   --spacing-28: 2.8rem;
+  --spacing-24: 2.4rem;
+  --spacing-20: 2rem;
   --spacing-16: 1.6rem;
   --spacing-12: 1.2rem;
   --spacing-8: 0.8rem;
@@ -65,9 +69,13 @@ html {
 
 a {
   text-decoration: none;
-  font-size: 2em; /* 1em = 10p, quiero 20px entonces pongo 2em */
   color: inherit; /* que tome el color que viene heredado del padre*/
   font-family: inherit; /* que tome la familia tipgráfica que viene heredado del padre*/
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 header,
@@ -76,16 +84,81 @@ footer {
   font-family: var(--alternative-font);
 }
 
-ul,
-ol {
-  list-style-type: none; /* para que no aparezca ningún bullet */
+img {
+  width: 100%; /* las imagenes simepre van a tener el 100% de su contenedor padre */
 }
 
 p {
   font-size: 1.8em; /* 1em = 10p, quiero 18px entonces pongo 1,8em */
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+ul,
+ol {
+  list-style-type: none; /* para que no aparezca ningún bullet */
+}
+
+/* ----------------- Fin normalización de variables ----------------- */
+
+/* Header */
+
+header {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-36);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  max-width: 300px;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-20);
+}
+
+.navbar__link {
+  font-size: var(--font-medium);
+  padding: var(--spacing-8) var(--spacing-16);
+  display: inline-block;
+  transition: background 0.3s ease-in-out;
+  position: relative; /* para que el submenu en SHOP tenga posición relativa al padre */
+}
+
+.navbar__link:hover {
+  background-color: var(--primary-900);
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.with-submenu:hover .submenu {
+  display: block;
+  transition: display 2s ease-in-out;
+}
+
+.submenu {
+  display: none;
+  width: 300px;
+  position: absolute; /* para sacarlo del flujo de la página */
+  background-color: var(--dark-bg-solid);
+}
+
+.submenu__link {
+  display: block;
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: var(--font-medium);
+  transition: background 0.3s ease-in-out;
+}
+
+.submenu__link:hover {
+  background-color: var(--primary-900);
 }
