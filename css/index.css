@@ -386,8 +386,7 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 /* Grilla de la sección principal */
 
 .shop_collection {
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
+  display: flex;
   padding: var(--spacing-16) 0;
   gap: var(--spacing-16);
   justify-items: center;
@@ -466,11 +465,16 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 
 /* Main */
 
-.shop {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  padding: var(--spacing-16) 0;
+.shop__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-20);
+}
+
+.shop__item {
+  flex: 1 1 clamp(250px, 25%, 20%);
+  /* flex: flex-grow flex-shrink y ancho. para el ancho uso clamp (se usa para definir medidas, width, hwight, etc) 
+  clamp = (lo minimo que pueden tener de ancho, el valor ideal, el valor máximo que se puede agrandar */
 }
 
 .pages {
