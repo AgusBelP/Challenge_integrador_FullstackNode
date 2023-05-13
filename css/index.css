@@ -483,3 +483,89 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   font-size: var(--font-small);
   font-weight: 700;
 }
+
+/* ----------------- Items  ----------------- */
+
+.items__page {
+  display: flex;
+  flex-direction: column;
+}
+
+.items__page-primary {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-128);
+  margin: var(--spacing-128) 0;
+}
+
+.items__page-primary picture {
+  order: -1;
+}
+
+.items__page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: var(--spacing-20);
+}
+
+.items__page-licence {
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  font-weight: 500;
+}
+
+.items__page-title {
+  font-family: var(--base-font);
+  font-size: var(--font-jumbo);
+  font-weight: 700;
+}
+
+.items__page-text {
+  font-family: var(--base-font);
+  font-size: var(--font-large);
+  font-weight: 400;
+}
+
+.items__page-price {
+  font-family: var(--base-font);
+  font-size: var(--font-jumbo);
+  font-weight: 400;
+}
+
+.items__page-buttons {
+  width: 38px;
+  height: 38px;
+  background-color: #4f4f4f;
+  border: none;
+  color: var(--light-font-solid);
+  font-size: var(--font-small);
+}
+
+.items__page-numitems {
+  height: 32px;
+  width: 38px;
+  text-align: center;
+  font-size: var(--font-medium);
+}
+
+.items__page-cart {
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  padding: var(--spacing-8) var(--spacing-16);
+  background-color: var(--primary-solid);
+  border: none;
+  color: var(--light-font-solid);
+  margin-left: var(--spacing-8);
+}
+
+.items__page-payment {
+  font-size: var(--font-xsmall);
+  color: var(--secondary-solid);
+  font-weight: 700;
+}
+
+.items__page-payment a {
+  text-decoration: underline;
+}
