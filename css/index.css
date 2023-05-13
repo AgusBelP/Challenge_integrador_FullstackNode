@@ -219,3 +219,59 @@ header {
   color: var(--light-font-solid);
   transition: all 0.3s ease-in-out;
 }
+
+/* Collections */
+
+.collection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+.collection__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24);
+  align-items: start;
+}
+
+.collection__title {
+  font-family: var(--alternative-font);
+  font-size: var(--font-display);
+  font-weight: 500;
+}
+
+.collection__text {
+  font-family: var(--alternative-font);
+  font-size: var(--font-large);
+  font-weight: 400;
+  border-bottom: 3px solid var(--primary-solid);
+  padding-bottom: var(--spacing-20);
+}
+
+.collection__link {
+  display: inline-block;
+  font-family: var(--base-font);
+  font-size: var(--font-large);
+  font-weight: 500;
+  color: var(--light-font-solid);
+  border-radius: 50px;
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-16) var(--spacing-36);
+}
+
+.order_1 {
+  order: 1;
+}
+
+/* Otra forma de poner el orden del segundo elemento al revé que los demás
+
+.collection:nth-child(2) .collection__cover{
+  order: -1 
+
+De esta forma el elemento con la clase collection__cover del segundo hijo de la clase collection tendrá un orden -1 (se colocará primero).
+  */
+
+.collection__link:hover {
+  background-color: var(--primary-900);
+  transition: background 0.3s ease-in-out;
+}
