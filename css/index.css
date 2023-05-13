@@ -356,6 +356,8 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   display: none;
 }
 
+/* Animations */
+
 @keyframes fade {
   0% {
     opacity: 0;
@@ -363,4 +365,16 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   100% {
     opacity: 1;
   }
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-68);
+}
+
+.footer__copy {
+  text-align: center;
+  margin-top: var(--spacing-36);
 }
