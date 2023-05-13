@@ -164,3 +164,58 @@ header {
 }
 
 /* HERO (banner) */
+
+.hero {
+  background-image: url(../img/funkos-banner.webp);
+  background-size: cover; /* Acomoda la imágen al minimo tamaño posible para que ocupe su container */
+  background-attachment: fixed; /* cuando hacemos scroll el background queda fijo */
+  padding: var(--spacing-128);
+  position: relative; /* posición relativa para poder habilitar x index */
+}
+
+.hero::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Para poder ubicarlo en la punta superior izq */
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px) brightness(0.9); /* para generar el efceto blur delante de a imagen de background del banner */
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+  align-items: start; /* para cambiar el align-items: stretch que viene por defecto */
+  z-index: 2; /* para que se posicione delante del resto */
+  position: relative; /* posición relativa para poder habilitar x index */
+}
+
+.hero__title {
+  font-family: var(--alternative-font);
+  font-size: var(--font-jumbo);
+  color: var(--light-font-solid);
+}
+
+.hero__text {
+  font-family: var(--alternative-font);
+  color: var(--light-font-solid);
+  font-size: var(--font-medium);
+}
+
+.hero__link {
+  display: inline-block;
+  font-size: var(--font-medium);
+  background-color: var(--light-bg-solid);
+  padding: var(--spacing-12) var(--spacing-68);
+  border-radius: 50px;
+  font-weight: 500;
+}
+
+.hero__link:hover {
+  background-color: var(--primary-900);
+  color: var(--light-font-solid);
+  transition: all 0.3s ease-in-out;
+}
