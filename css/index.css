@@ -383,15 +383,17 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 
 /* ----------------- Shop  ----------------- */
 
-/* Aside */
+/* Grilla de la sección principal */
 
 .shop_collection {
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  grid-template-columns: 0.3fr 1fr;
   padding: var(--spacing-16) 0;
   gap: var(--spacing-16);
   justify-items: center;
 }
+
+/* Aside */
 
 .filter {
   display: flex;
@@ -445,6 +447,7 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   display: grid;
   grid-template-columns: 0.2fr 1fr;
   row-gap: var(--spacing-8);
+  align-items: center;
 }
 
 .filter__options-tag {
@@ -454,10 +457,25 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 }
 
 .filter__options-select {
-  border: 2px solid var(--primary-solid);
-  border-radius: 1px;
+  appearance: none;
+  border: 2px solid var(--dark-bg-solid);
+  border-radius: 6px;
   width: 24px;
   height: 24px;
 }
 
 /* Main */
+
+.shop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: var(--spacing-16) 0;
+}
+
+.pages {
+  appearance: none;
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  font-weight: 700;
+}
