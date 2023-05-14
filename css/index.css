@@ -733,3 +733,14 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   color: var(--light-font-solid);
   border: none;
 }
+
+.create__form-spacing img {
+  height: 150px;
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+}
+
+.create__form-spacing p {
+  text-align: center;
+}
