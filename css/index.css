@@ -592,3 +592,144 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
   display: flex;
   gap: var(--spacing-12);
 }
+
+/* ----------------- Create ----------------- */
+
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-36);
+  padding: var(--spacing-36) 0;
+}
+
+.create__title {
+  font-family: var(--alternative-font);
+  font-size: var(--font-jumbo);
+  font-weight: 700;
+}
+
+.create__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-28);
+  width: 830px;
+  justify-content: start;
+}
+
+.create__form-title {
+  font-family: var(--base-font);
+  font-size: var(--font-large);
+  font-weight: 400;
+}
+
+.create__form-box1 {
+  width: 243px;
+  height: 45px;
+  border: 2px solid var(--dark-bg-solid);
+  border-radius: 6px;
+  font-size: var(--font-medium);
+}
+
+.create__form-spacing {
+  display: flex;
+  gap: var(--spacing-20);
+  align-items: center;
+}
+
+.create__form-name {
+  width: 300px;
+  height: 22px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+  padding: var(--spacing-20) 0;
+  margin-left: var(--spacing-20);
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  text-align: start;
+}
+
+.create__form-textarea {
+  resize: none;
+  min-width: 100%;
+  max-width: 100%;
+  border: 1px solid var(--dark-solid);
+  border-radius: 4px;
+  padding: var(--spacing-16);
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+}
+
+.create__form-sku {
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  width: 130px;
+  height: 22px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+  padding: var(--spacing-16) 0;
+}
+
+.create__form-price {
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  width: 100px;
+  height: 22px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.create__form-stock {
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  width: 120px;
+  height: 22px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.create__form-disc {
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 400;
+  width: 60px;
+  height: 22px;
+  border: none;
+  border-bottom: 2px solid var(--primary-solid);
+  padding: var(--spacing-16) 0;
+  text-align: center;
+}
+
+.create__form-files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create__form-add {
+  font-family: var(--base-font);
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  padding: var(--spacing-12) var(--spacing-24);
+  background-color: var(--primary-solid);
+  color: var(--light-font-solid);
+  border: none;
+}
+
+.create__form-clear {
+  font-family: var(--base-font);
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  padding: var(--spacing-12) var(--spacing-24);
+  background-color: var(--primary-solid);
+  color: var(--light-font-solid);
+  border: none;
+}
