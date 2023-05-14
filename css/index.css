@@ -486,6 +486,8 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 
 /* ----------------- Items  ----------------- */
 
+/* Primera sección */
+
 .items__page {
   display: flex;
   flex-direction: column;
@@ -568,4 +570,25 @@ De esta forma el elemento con la clase collection__cover del segundo hijo de la 
 
 .items__page-payment a {
   text-decoration: underline;
+}
+
+/* Segunda sección */
+
+.related__products {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-68);
+  margin-bottom: var(--spacing-128);
+}
+
+.related__products-title {
+  font-family: var(--alternative-font);
+  font-size: var(--font-display);
+  font-weight: 700;
+  justify-content: start;
+}
+
+.related__products-items {
+  display: flex;
+  gap: var(--spacing-12);
 }
