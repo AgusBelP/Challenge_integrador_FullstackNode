@@ -1,0 +1,62 @@
+header {
+  background-color: var(--dark-bg-solid);
+  padding: var(--spacing-36);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__logo {
+  max-width: 300px;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-20);
+}
+
+.navbar__link {
+  font-size: var(--font-medium);
+  padding: var(--spacing-8) var(--spacing-16);
+  display: inline-block;
+  transition: background 0.3s ease-in-out;
+  position: relative; /* para que el submenu en SHOP tenga posición relativa al padre */
+}
+
+.navbar__link:hover {
+  background-color: var(--primary-900);
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-8);
+}
+
+.with-submenu:hover .submenu {
+  display: block;
+  transition: display 2s ease-in-out;
+}
+
+.submenu {
+  display: none;
+  width: 300px;
+  position: absolute; /* para sacarlo del flujo de la página */
+  background-color: var(--dark-bg-solid);
+  z-index: 3; /* para que se vea el menú desplegable por encima de la capa del hero banner */
+}
+
+.submenu__link {
+  display: block;
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: var(--font-medium);
+  transition: background 0.3s ease-in-out;
+}
+
+.submenu__link:hover {
+  background-color: var(--primary-900);
+}

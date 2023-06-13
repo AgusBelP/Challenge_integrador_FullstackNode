@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Las opciones son border-box y content-box. Box-sizing toma el tamaño del elemento y haciendo box-sizing:border-box la caja va a tener el ancho determinado y si se le agrega un margin éste será tomado desde los bordes de la caja hacia adentro. Si uso content-box al agregar margin éstos se calculan desde el borde de la caja hacia AFUERA, lo que puede traer desajustes en los achos y dependiendo de los anchos que manejo dos elementos que antes estaban uno al lado dle otro con un content-box pueden terminar uno arriba dle otro. */
+}
+
+/* Todos los estilos que usemos para la etiqueta html y sean heredables será heredado por todos sus hijos (todos son hijos de html) */
+
+html {
+  font-size: 62.5%; /* (equivale a 10px), 1em = 10px entonces es más fácil hacer la conversión de las demás medidas en px a em */
+  color: var(--dark-solid);
+  font-family: var(--base-font);
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* que tome el color que viene heredado del padre*/
+  font-family: inherit; /* que tome la familia tipgráfica que viene heredado del padre*/
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header,
+footer {
+  color: var(--light-font-solid);
+  font-family: var(--alternative-font);
+}
+
+img {
+  width: 100%; /* las imagenes simepre van a tener el 100% de su contenedor padre */
+}
+
+p {
+  font-size: 1.8em; /* 1em = 10p, quiero 18px entonces pongo 1,8em */
+}
+
+ul,
+ol {
+  list-style-type: none; /* para que no aparezca ningún bullet */
+}
