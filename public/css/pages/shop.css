@@ -1,0 +1,100 @@
+/* Grilla de la sección principal */
+
+.shop_collection {
+  display: flex;
+  padding: var(--spacing-16) 0;
+  gap: var(--spacing-16);
+  justify-items: center;
+}
+
+/* Aside */
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
+
+.filter__content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--spacing-8);
+}
+
+.filter__title {
+  font-family: var(--base-font);
+  font-size: var(--font-large);
+  font-weight: 500;
+}
+
+.filter__input {
+  border: 2px solid var(--dark-bg-solid);
+  border-radius: 6px;
+  padding: var(--spacing-8);
+  font-family: var(--base-font);
+  font-size: var(--font-medium);
+  font-weight: 500;
+}
+
+.filter__price {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: var(--spacing-16);
+}
+
+.filter__price-tag {
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  font-weight: 500;
+  padding-right: var(--spacing-12);
+}
+
+.filter__price-value {
+  text-align: center;
+  width: 60px;
+  height: 28px;
+}
+
+.filter__options {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  row-gap: var(--spacing-8);
+  align-items: center;
+}
+
+.filter__options-tag {
+  font-family: var(--base-font);
+  font-weight: 500;
+  font-size: var(--font-medium);
+}
+
+.filter__options-select {
+  appearance: none;
+  border: 2px solid var(--dark-bg-solid);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Main */
+
+.shop__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-20);
+}
+
+.shop__item {
+  flex: 1 1 clamp(250px, 25%, 20%);
+  /* flex: flex-grow flex-shrink y ancho. para el ancho uso clamp (se usa para definir medidas, width, hwight, etc) 
+  clamp = (lo minimo que pueden tener de ancho, el valor ideal, el valor máximo que se puede agrandar */
+}
+
+.pages {
+  appearance: none;
+  font-family: var(--base-font);
+  font-size: var(--font-small);
+  font-weight: 700;
+}

@@ -1,0 +1,12 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-36);
+  padding: var(--spacing-36) 0;
+}
+
+.create__title {
+  font-family: var(--alternative-font);
+  font-size: var(--font-jumbo);
+  font-weight: 700;
+}

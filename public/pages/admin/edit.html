@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create | Funkoshop</title>
+    <title>Edit | Funkoshop</title>
     <link rel="stylesheet" href="/css/index.css" />
   </head>
   <body>
@@ -17,7 +17,7 @@
         </picture>
         <ul class="navbar__menu">
           <li class="navbar__item with-submenu">
-            <a class="navbar__link with-icon" href="/pages/shop/shop.html"
+            <a class="navbar__link with-icon" href="./pages/shop/shop.html"
               >SHOP <iconify-icon icon="tabler:chevron-down"></iconify-icon
             ></a>
             <ul class="submenu">
@@ -33,13 +33,13 @@
             </ul>
           </li>
           <li class="navbar__item">
-            <a class="navbar__link" href="/pages/admin/contact.html">CONTACTO</a>
+            <a class="navbar__link" href="./pages/admin/contact.html">CONTACTO</a>
           </li>
           <li class="navbar__item">
-            <a class="navbar__link" href="/pages/admin/login.html">LOGIN</a>
+            <a class="navbar__link" href="./pages/admin/login.html">LOGIN</a>
           </li>
           <li class="navbar__item">
-            <a class="navbar__cart" href="/pages/cart.html">
+            <a class="navbar__cart" href="./pages/cart.html">
               <img src="/img/icons/cart-icon.svg" alt="icono de carrito" />
             </a>
           </li>
@@ -47,33 +47,34 @@
       </nav>
     </header>
     <main class="create container">
-      <h2 class="create__title">CREAR NUEVO ITEM</h2>
-      <form action="" class="create__form">
-        <div class="create__form-spacing">
-          <label for="categoria" class="create__form-title">Categoría:</label>
-          <select name="categoria" id="categoria" class="create__form-box1" required>
+      <h2 class="create__title">EDITAR ITEM</h2>
+      <form action="" class="form">
+        <div class="form-spacing">
+          <label for="categoria" class="form-title">Categoría:</label>
+          <select name="categoria" id="categoria" class="form-box1" required>
             <option value="" disabled selected hidden>Seleccionar</option>
             <!-- disabled = grisado, selected = la primera opción que aparece, hidden = para que no aparezca entre las opciones del dropdown -->
-            <option value="Figuras Coleccionables">Figuras Coleccionables</option>
+            <option value="Figuras Coleccionables" selected>Figuras Coleccionables</option>
             <option value="Llaveros">Llaveros</option>
             <option value="Remeras">Remeras</option>
           </select>
-          <label for="licencia" class="create__form-title">Licencia:</label>
-          <select name="licencia" id="licencia" class="create__form-box1" required>
+          <label for="licencia" class="form-title">Licencia:</label>
+          <select name="licencia" id="licencia" class="form-box1" required>
             <option value="" disabled selected hidden>Seleccionar</option>
             <option value="starwars">Star Wars</option>
             <option value="pokemon">Pokemon</option>
-            <option value="harypotter">Harry Potter</option>
+            <option value="harypotter" selected>Harry Potter</option>
           </select>
         </div>
         <div>
-          <label for="nombre_producto" class="create__form-title">Nombre del producto:</label>
+          <label for="nombre_producto" class="form-title">Nombre del producto:</label>
           <input
             type="text"
             id="nombre_producto"
             name="nombre_producto"
             placeholder="Nombre del producto"
-            class="create__form-name"
+            class="form-name"
+            value="Figura Funko coleccionable de Hermione"
             required />
         </div>
         <div>
@@ -84,33 +85,44 @@
             rows="10"
             placeholder="Descripción del producto"
             wrap="hard"
-            class="create__form-textarea"
-            required></textarea>
+            class="form-textarea"
+            required>
+Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Potter y el cáliz de fuego'"
+          </textarea>
         </div>
-        <div class="create__form-spacing">
-          <label for="sku" class="create__form-title">SKU:</label>
-          <input type="text" id="sku" name="sku" placeholder="SSK111AB001" class="create__form-sku" required />
-          <label for="precio" class="create__form-title">Precio:</label>
+        <div class="form-spacing">
+          <label for="sku" class="form-title">SKU:</label>
           <input
-            type="number"
-            id="precio"
+            type="text"
+            id="sku"
+            name="sku"
+            placeholder="SSK111AB001"
+            class="form-sku"
+            value="HPT001002"
+            required />
+          <label for="precio" class="form-title">Precio:</label>
+          <input
+            type="text"
             name="precio"
+            id="precio"
             data-type="currency"
             placeholder="$0.000,00"
-            class="create__form-price"
+            class="form-price"
+            value="$1.799,00"
             required />
-          <label for="stock" class="create__form-title">Stock:</label>
+          <label for="stock" class="form-title">Stock:</label>
           <input
             type="number"
             name="stock"
             id="stock"
             placeholder="0 unidades"
             min="0"
-            class="create__form-stock"
+            class="form-stock"
+            value="10"
             required />
         </div>
-        <div class="create__form-spacing">
-          <label for="descuento" class="create__form-title">Descuento</label>
+        <div class="form-spacing">
+          <label for="descuento" class="form-title">Descuento</label>
           <input
             type="text"
             name="descuento"
@@ -119,32 +131,36 @@
             min="0"
             max="100"
             step="5"
-            class="create__form-disc"
+            class="form-disc"
+            value="10%"
             required />
-          <label for="cuotas" class="create__form-title">Cuotas:</label>
-          <select name="cuotas" id="cuotas" class="create__form-box1">
+          <label for="cuotas" class="form-title">Cuotas:</label>
+          <select name="cuotas" id="cuotas" class="form-box1">
             <option value="0">0 cuotas sin interés</option>
             <option value="3">3 cuotas sin interés</option>
-            <option value="6">6 cuotas sin interés</option>
+            <option value="6" selected>6 cuotas sin interés</option>
             <option value="9">9 cuotas sin interés</option>
             <option value="12">12 cuotas sin interés</option>
             <option value="18">18 cuotas sin interés</option>
             <option value="24">24 cuotas sin interés</option>
           </select>
         </div>
-        <div class="create__form-spacing">
-          <label for="imagenes" class="create__form-title">Imágenes:</label>
-          <input
-            type="file"
-            name="imagenes"
-            id="imagenes"
-            value="Elegir archivos"
-            class="create__form-files"
-            multiple />
+        <div class="form-spacing">
+          <label for="imagenes" class="form-title">Imágenes:</label>
+          <input type="file" name="imagenes" id="imagenes" value="Elegir archivos" class="form-files" multiple />
         </div>
-        <div class="create__form-spacing">
-          <input type="submit" value="Agregar Producto" class="create__form-add" />
-          <input type="reset" value="Limpiar" class="create__form-clear" />
+        <div class="form-spacing">
+          <picture>
+            <img src="/img/harry-potter/hermione-1.webp" alt="Figura Funko coleccionable de Hermione" />
+            <p>Frente</p>
+          </picture>
+          <picture>
+            <img src="/img/harry-potter/hermione-box.webp" alt="Figura Funko coleccionable de Hermione en caja" />
+            <p>Dorso</p>
+          </picture>
+        </div>
+        <div class="form-spacing">
+          <input type="submit" value="Modificar Producto" class="form-add" />
         </div>
       </form>
     </main>
