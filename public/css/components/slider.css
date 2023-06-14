@@ -11,7 +11,8 @@
   text-transform: uppercase; /* ya lo escribí en mayúscula pero así se ve el uso de text-transform */
 }
 
-.slider__items {
+/* Comento la clase slider__items ya que al utilizar glide.js no necesiot estos estilos para el carroussel*/
+/* .slider__items {
   display: flex;
-  gap: var(--spacing-24);
-}
+  gap: var(--spacing-24); 
+} */
