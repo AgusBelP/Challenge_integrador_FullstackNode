@@ -1,6 +1,10 @@
 const express = require('express');
+const fs = require('fs');
 const app = express();
-const port = 3002;
+
+// Llamo a la dependencia dotenv y defino el puerto de la aplicación
+require('dotenv').config()
+const port = process.env.port;
 
 app.use(express.static('public'));
 

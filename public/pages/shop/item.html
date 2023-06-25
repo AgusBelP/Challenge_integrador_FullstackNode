@@ -55,10 +55,10 @@
             Figura coleccionable de Baby Yoda (Grogu) - The Mandalorian Saga, edición limitada.
           </p>
           <h4 class="items__page-price">$1799,99.-</h4>
-          <form action="">
-            <button type="button" class="items__page-buttons">-</button>
-            <input type="text" placeholder="0" class="items__page-numitems" />
-            <button type="button" class="items__page-buttons">+</button>
+          <form action="" method="">
+            <button type="button" class="items__page-buttons" id="minus_button">-</button>
+            <input type="text" placeholder="0" class="items__page-numitems" id="item_quantity" />
+            <button type="button" class="items__page-buttons" id="plus_button">+</button>
             <input class="items__page-cart" type="button" value="Agregar al carrito" />
           </form>
           <p class="items__page-payment"><a href="">Ver métodos de pago</a> - 3 CUOTAS SIN INTERÉS</p>
@@ -146,8 +146,12 @@
             </ul>
           </div>
           <div class="glide__arrows" data-glide-el="controls">
-            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+              <iconify-icon icon="tabler:chevron-left"></iconify-icon>
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+              <iconify-icon icon="tabler:chevron-right"></iconify-icon>
+            </button>
           </div>
         </div>
       </section>
@@ -167,13 +171,8 @@
       <p class="footer__copy">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="../../js/items.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
-    <script>
-      new Glide(".glide", {
-        type: "carousel",
-        startAt: 0,
-        perView: 3,
-      }).mount();
-    </script>
+    <script src="../../js/glide.js"></script>
   </body>
 </html>

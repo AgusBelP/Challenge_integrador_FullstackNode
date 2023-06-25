@@ -11,6 +11,21 @@
   text-transform: uppercase; /* ya lo escribí en mayúscula pero así se ve el uso de text-transform */
 }
 
+iconify-icon {
+  color: var(--dark-solid);
+  font-size: var(--font-small);
+  font-weight: 700;
+}
+
+/*Aprovechando las clases de Glide.js muevo los iconos de chevron hacia los bordes de la sección. Como tienen posicionamiento absoluto con poner eft:0 y right:0 ya logro lo deseado*/
+.glide__arrow--left {
+  left: 0;
+}
+
+.glide__arrow--right {
+  right: 0;
+}
+
 /* Comento la clase slider__items ya que al utilizar glide.js no necesiot estos estilos para el carroussel*/
 /* .slider__items {
   display: flex;

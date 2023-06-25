@@ -1,6 +1,8 @@
 /* ----------------- Archivos externos ----------------- */
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;900&family=Raleway:wght@100;300;400;500;600;700;900&display=swap");
+
+/*Glide.js*/
 @import url(" https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css");
 @import url("https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css");
 
