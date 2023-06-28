@@ -7,12 +7,17 @@ const item_quantity = document.querySelector("#item_quantity");
 let i = 0;
 
 
-minus_button.addEventListener("click", function (){
+minus_button.addEventListener("click", () => {
     i -= 1;
     i>0 ? item_quantity.value = i : (item_quantity.value = 0, i=0)
 } )
 
-plus_button.addEventListener("click", function (){
+plus_button.addEventListener("click", () =>{
     i += 1;
     i<0 ? (item_quantity.value = 0, i=0 ) : item_quantity.value = i    
 } )
+
+item_quantity.addEventListener("change",() => {
+    item_quantity.value < 0 ? (item_quantity.value = 0, i=0) : (item_quantity.value, i=Number(item_quantity.value))
+ 
+})
