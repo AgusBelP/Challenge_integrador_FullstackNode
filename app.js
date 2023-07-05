@@ -9,6 +9,10 @@ const port = process.env.port;
 // Defino la carpeta de archivos estáticos
 app.use(express.static('public'));
 
+// Defino el template engine EJS
+app.set('view engine', 'ejs');
+app.set('views', '.src/views')
+
 //Importo las rutas de los archivos en la carpeta Routes
 const mainRoutes = require('./src/routes/mainRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');

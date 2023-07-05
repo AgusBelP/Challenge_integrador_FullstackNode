@@ -1,12 +1,17 @@
+const { getOne } = require('../model/shopModel')
 
 const shop = (req,res) => {
     res.send("En teoría tendría que devolver la pagina de shop")
 };
 
-const item = (req,res) => {
+const item = async (req,res) => {
     const id = req.params.id
 
-    res.send(`En teoría tendría que devolver el item id ${id}`)
+    const item = await getOne({item_id : id});
+
+    res.send(item);
+
+    /* res.send(`En teoría tendría que devolver el item id ${id}`) */
 };
 
 const add = (req,res) => {
