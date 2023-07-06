@@ -9,12 +9,19 @@ const shop = (req,res) => {
 };
 
 const item = async (req,res) => {
-    const id = req.params.id
+
+    res.render('./shop/item', {
+        view:{
+            title:"Item | Funkoshop"
+        }
+    })
+    
+   /*  const id = req.params.id
 
     const item = await getOne({item_id : id});
 
     res.send(item);
-
+ */
     /* res.send(`En teoría tendría que devolver el item id ${id}`) */
 };
 

@@ -1,0 +1,106 @@
+<%- include('../partials/header') %>
+<main class="create container">
+  <h2 class="create__title">EDITAR ITEM</h2>
+  <form action="" class="form">
+    <div class="form-spacing">
+      <label for="categoria" class="form-title">Categoría:</label>
+      <select name="categoria" id="categoria" class="form-box1" required>
+        <option value="" disabled selected hidden>Seleccionar</option>
+        <!-- disabled = grisado, selected = la primera opción que aparece, hidden = para que no aparezca entre las opciones del dropdown -->
+        <option value="Figuras Coleccionables" selected>Figuras Coleccionables</option>
+        <option value="Llaveros">Llaveros</option>
+        <option value="Remeras">Remeras</option>
+      </select>
+      <label for="licencia" class="form-title">Licencia:</label>
+      <select name="licencia" id="licencia" class="form-box1" required>
+        <option value="" disabled selected hidden>Seleccionar</option>
+        <option value="starwars">Star Wars</option>
+        <option value="pokemon">Pokemon</option>
+        <option value="harypotter" selected>Harry Potter</option>
+      </select>
+    </div>
+    <div>
+      <label for="nombre_producto" class="form-title">Nombre del producto:</label>
+      <input
+        type="text"
+        id="nombre_producto"
+        name="nombre_producto"
+        placeholder="Nombre del producto"
+        class="form-name"
+        value="Figura Funko coleccionable de Hermione"
+        required />
+    </div>
+    <div>
+      <textarea
+        name="descripcion_producto"
+        id="descripcion_producto"
+        cols="30"
+        rows="10"
+        placeholder="Descripción del producto"
+        wrap="hard"
+        class="form-textarea"
+        required>
+Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Potter y el cáliz de fuego'"
+          </textarea
+      >
+    </div>
+    <div class="form-spacing">
+      <label for="sku" class="form-title">SKU:</label>
+      <input type="text" id="sku" name="sku" placeholder="SSK111AB001" class="form-sku" value="HPT001002" required />
+      <label for="precio" class="form-title">Precio:</label>
+      <input
+        type="text"
+        name="precio"
+        id="precio"
+        data-type="currency"
+        placeholder="$0.000,00"
+        class="form-price"
+        value="$1.799,00"
+        required />
+      <label for="stock" class="form-title">Stock:</label>
+      <input type="number" name="stock" id="stock" placeholder="0 unidades" min="0" class="form-stock" value="10" required />
+    </div>
+    <div class="form-spacing">
+      <label for="descuento" class="form-title">Descuento</label>
+      <input
+        type="text"
+        name="descuento"
+        id="descuento"
+        placeholder="0%"
+        min="0"
+        max="100"
+        step="5"
+        class="form-disc"
+        value="10%"
+        required />
+      <label for="cuotas" class="form-title">Cuotas:</label>
+      <select name="cuotas" id="cuotas" class="form-box1">
+        <option value="0">0 cuotas sin interés</option>
+        <option value="3">3 cuotas sin interés</option>
+        <option value="6" selected>6 cuotas sin interés</option>
+        <option value="9">9 cuotas sin interés</option>
+        <option value="12">12 cuotas sin interés</option>
+        <option value="18">18 cuotas sin interés</option>
+        <option value="24">24 cuotas sin interés</option>
+      </select>
+    </div>
+    <div class="form-spacing">
+      <label for="imagenes" class="form-title">Imágenes:</label>
+      <input type="file" name="imagenes" id="imagenes" value="Elegir archivos" class="form-files" multiple />
+    </div>
+    <div class="form-spacing">
+      <picture>
+        <img src="../../img/harry-potter/hermione_ball_dress.webp" alt="Figura Funko coleccionable de Hermione" />
+        <p>Frente</p>
+      </picture>
+      <picture>
+        <img src="../../img/harry-potter/hermione_ball_dress_box.webp" alt="Figura Funko coleccionable de Hermione en caja" />
+        <p>Dorso</p>
+      </picture>
+    </div>
+    <div class="form-spacing">
+      <input type="submit" value="Modificar Producto" class="form-add" />
+    </div>
+  </form>
+</main>
+<%- include('../partials/footer') %>

@@ -1,9 +1,15 @@
 const admin = (req,res) => {
-    res.send("Debería devolver la página de admin")
+    res.render('./admin/admin', {
+        view:{
+            title:"Admin | Funkoshop"
+    }})
 };
 
 const create = (req,res) => {
-    res.send("Debería devolver la página de create")
+    res.render('./admin/create', {
+        view:{
+            title:"Create | Funkoshop"
+    }})
 };
 
 const create_post = (req,res) => {
@@ -11,9 +17,10 @@ const create_post = (req,res) => {
 };
 
 const edit = (req,res) => {
-    const id = req.params.id
-    
-    res.send(`Debería devolver la página de edit para el id ${id}`)
+     res.render('./admin/edit', {
+        view:{
+            title:"Edit | Funkoshop"
+    }})
 };
 
 const edit_put = (req,res) => {
