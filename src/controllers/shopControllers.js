@@ -1,7 +1,11 @@
 const { getOne } = require('../model/shopModel')
 
 const shop = (req,res) => {
-    res.send("En teoría tendría que devolver la pagina de shop")
+    res.render('./shop/shop', {
+        view:{
+            title:"Shop | Funkoshop"
+        }
+    })
 };
 
 const item = async (req,res) => {

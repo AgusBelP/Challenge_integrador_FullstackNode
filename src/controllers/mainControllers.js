@@ -1,5 +1,9 @@
 const main = (req,res) => {
-    res.send("Debería devolver la página de home")
+    res.render('home', {
+        view:{
+            title: "Home | Funkoshop"
+        }
+    })
 };
 
 const contact = (req,res) => {

@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 // Defino el template engine EJS
 app.set('view engine', 'ejs');
-app.set('views', '.src/views')
+app.set('views', './src/views')
 
 //Importo las rutas de los archivos en la carpeta Routes
 const mainRoutes = require('./src/routes/mainRoutes');
