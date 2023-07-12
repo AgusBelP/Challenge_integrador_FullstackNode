@@ -1,9 +1,9 @@
 const { conn } = require('../config/conn')
 
-const getOne = async (params) => {
+const getLicences = async () => {
     try{
         
-        const [rows] = await conn.query('SELECT * FROM items WHERE ?', params);
+        const [rows] = await conn.query('SELECT * FROM licence');
 
         return rows;
     }
@@ -13,8 +13,9 @@ const getOne = async (params) => {
     finally{
         conn.releaseConnection();
     }
-}
+};
+
 
 module.exports = {
-    getOne
+    getLicences
 }

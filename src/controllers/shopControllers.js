@@ -1,28 +1,30 @@
-const { getOne } = require('../model/shopModel')
+const itemsServices = require('../services/itemsServices')
 
-const shop = (req,res) => {
+const shop = async (req,res) => {
+    const items = await itemsServices.getItems();
+
     res.render('./shop/shop', {
         view:{
             title:"Shop | Funkoshop"
-        }
+        },
+        items
     })
 };
 
 const item = async (req,res) => {
+    const id = req.params.id;
 
-    res.render('./shop/item', {
+    const item = await itemsServices.getItemView(id);
+    const licence = item[0].licence_name
+    const related = await itemsServices.itemRelated(licence);
+    
+    res.render('./shop/items', {
         view:{
             title:"Item | Funkoshop"
-        }
+        },
+        item: item[0],
+        related
     })
-    
-   /*  const id = req.params.id
-
-    const item = await getOne({item_id : id});
-
-    res.send(item);
- */
-    /* res.send(`En teoría tendría que devolver el item id ${id}`) */
 };
 
 const add = (req,res) => {

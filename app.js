@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
+const methodOverride = require('method-override');
 
 // Llamo a la dependencia dotenv y defino el puerto de la aplicación
 require('dotenv').config();
@@ -21,6 +22,9 @@ const shopRoutes = require('./src/routes/shopRoutes');
 // Convierte los datos recibidos por POST
 app.use(express.urlencoded());
 app.use(express.json());
+
+// Override para habilitar los métodos PUT y DELETE
+app.use(methodOverride('_method'));
 
 //Rutas a la aplicación
 app.use("/", mainRoutes);

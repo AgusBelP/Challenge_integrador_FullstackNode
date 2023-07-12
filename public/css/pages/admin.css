@@ -92,3 +92,10 @@
   font-weight: bold;
   text-align: center;
 }
+
+.delete_btn {
+  border: none;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+}

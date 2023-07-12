@@ -1,22 +1,21 @@
 <%- include('../partials/header') %>
 <main class="create container">
   <h2 class="create__title">EDITAR ITEM</h2>
-  <form action="" class="form">
+  <form action="/admin/edit/<%= item.item_id %>?_method=PUT" method="POST" class="form" enctype="application/x-www-form-urlencoded">
     <div class="form-spacing">
       <label for="categoria" class="form-title">Categoría:</label>
       <select name="categoria" id="categoria" class="form-box1" required>
-        <option value="" disabled selected hidden>Seleccionar</option>
-        <!-- disabled = grisado, selected = la primera opción que aparece, hidden = para que no aparezca entre las opciones del dropdown -->
-        <option value="Figuras Coleccionables" selected>Figuras Coleccionables</option>
-        <option value="Llaveros">Llaveros</option>
-        <option value="Remeras">Remeras</option>
+        <% categories.forEach((categories,i) => { %>
+        <option value="<%= i+1 %>" <% if (item.category_id === categories.category_id) { %>selected<% } %>>
+          <%= categories.category_name %></option>
+        <% });%>
       </select>
       <label for="licencia" class="form-title">Licencia:</label>
       <select name="licencia" id="licencia" class="form-box1" required>
-        <option value="" disabled selected hidden>Seleccionar</option>
-        <option value="starwars">Star Wars</option>
-        <option value="pokemon">Pokemon</option>
-        <option value="harypotter" selected>Harry Potter</option>
+        <% licences.forEach((licences,i) => { %>
+        <option <% if (item.licence_id === licences.licence_id) { %>selected<% } %> value="<%= i+1 %>">
+          <%= licences.licence_name %></option>
+        <% });%>
       </select>
     </div>
     <div>
@@ -27,7 +26,7 @@
         name="nombre_producto"
         placeholder="Nombre del producto"
         class="form-name"
-        value="Figura Funko coleccionable de Hermione"
+        value="<%= item.item_name %>"
         required />
     </div>
     <div>
@@ -40,13 +39,20 @@
         wrap="hard"
         class="form-textarea"
         required>
-Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Potter y el cáliz de fuego'"
+<%= item.item_description %>
           </textarea
       >
     </div>
     <div class="form-spacing">
       <label for="sku" class="form-title">SKU:</label>
-      <input type="text" id="sku" name="sku" placeholder="SSK111AB001" class="form-sku" value="HPT001002" required />
+      <input
+        type="text"
+        id="sku"
+        name="sku"
+        placeholder="SSK111AB001"
+        class="form-sku"
+        value="<%=item.SKU  %>"
+        required />
       <label for="precio" class="form-title">Precio:</label>
       <input
         type="text"
@@ -55,10 +61,18 @@ Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Pott
         data-type="currency"
         placeholder="$0.000,00"
         class="form-price"
-        value="$1.799,00"
+        value="<%=item.price %>"
         required />
       <label for="stock" class="form-title">Stock:</label>
-      <input type="number" name="stock" id="stock" placeholder="0 unidades" min="0" class="form-stock" value="10" required />
+      <input
+        type="number"
+        name="stock"
+        id="stock"
+        placeholder="0 unidades"
+        min="0"
+        class="form-stock"
+        value="<%=item.stock %>"
+        required />
     </div>
     <div class="form-spacing">
       <label for="descuento" class="form-title">Descuento</label>
@@ -71,17 +85,17 @@ Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Pott
         max="100"
         step="5"
         class="form-disc"
-        value="10%"
+        value="<%=item.discount %>"
         required />
       <label for="cuotas" class="form-title">Cuotas:</label>
       <select name="cuotas" id="cuotas" class="form-box1">
-        <option value="0">0 cuotas sin interés</option>
-        <option value="3">3 cuotas sin interés</option>
-        <option value="6" selected>6 cuotas sin interés</option>
-        <option value="9">9 cuotas sin interés</option>
-        <option value="12">12 cuotas sin interés</option>
-        <option value="18">18 cuotas sin interés</option>
-        <option value="24">24 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 0) { %> selected <% } %> value="0">0 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 3) { %> selected <% } %> value="3">3 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 6) { %> selected <% } %>  value="6">6 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 9) { %> selected <% } %>  value="9">9 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 12) { %> selected <% } %>  value="12">12 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 18) { %> selected <% } %>  value="18">18 cuotas sin interés</option>
+        <option <% if (item.instalment_plan === 24) { %> selected <% } %>  value="24">24 cuotas sin interés</option>
       </select>
     </div>
     <div class="form-spacing">
@@ -90,11 +104,11 @@ Figura Funko coleccionable de Hermione con vestido de gala película 'Harry Pott
     </div>
     <div class="form-spacing">
       <picture>
-        <img src="../../img/harry-potter/hermione_ball_dress.webp" alt="Figura Funko coleccionable de Hermione" />
+        <img src="<%= item.img_front %>" alt="<%=item.item_description %>" />
         <p>Frente</p>
       </picture>
       <picture>
-        <img src="../../img/harry-potter/hermione_ball_dress_box.webp" alt="Figura Funko coleccionable de Hermione en caja" />
+        <img src="<%= item.img_back %>" alt="<%=item.item_description %>" />
         <p>Dorso</p>
       </picture>
     </div>

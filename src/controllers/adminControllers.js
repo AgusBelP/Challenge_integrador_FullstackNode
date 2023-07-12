@@ -1,42 +1,80 @@
-const admin = (req,res) => {
+const itemsServices = require('../services/itemsServices')
+const categoriesServices = require('../services/categoriesServices')
+const licencesServices = require('../services/licencesServices')
+
+const admin = async (req,res) => {
+    const items = await itemsServices.getItems();
+
     res.render('./admin/admin', {
         view:{
             title:"Admin | Funkoshop"
-    }})
+        },
+        items
+    });
 };
 
-const create = (req,res) => {
+/* Para traer la vista de la pagina create traigo primero los datos de las tablas categories y licences, de esa forma al querer crear un item nuevo desde la base ya traigo los id de categoria y licencia y si se agregan a la base nuevas categorias o licencias el dropdown se completa automáticamente */
+
+const create = async (req,res) => {
+    const categories = await  categoriesServices.categories();
+    const licences = await  licencesServices.licences()
+
     res.render('./admin/create', {
         view:{
             title:"Create | Funkoshop"
-    }})
+    },
+    categories,
+    licences
+})
 };
 
-const create_post = (req,res) => {
-    res.send("Debería enviar datos a la página de create")
+/* Para el create traigo los datos completos en el formulario, el id de categoria y licencia se trajo desde la base de datos al cargar la vista de la página*/
+
+const create_post = async (req,res) => {
+    const item = req.body;
+    await itemsServices.createItem(item);
+    res.redirect('/admin/admin')
 };
 
-const edit = (req,res) => {
+const edit = async (req,res) => {
+    const id = req.params.id;
+
+    const item = await itemsServices.getItem(id);
+    const categories = await  categoriesServices.categories();
+    const licences = await  licencesServices.licences()
+
      res.render('./admin/edit', {
         view:{
             title:"Edit | Funkoshop"
-    }})
+        },
+        item: item[0],
+        licences,
+        categories
+    })
 };
 
-const edit_put = (req,res) => {
-    const id = req.params.id
+const edit_put = async (req,res) => {
+    const item = req.body;
+    const id = req.params.id;
+    console.log(item);
+    console.log(id);
+    await itemsServices.editItem(item,id);
     
-    res.send(`Debería modificar la página de edit para el id ${id}`)
+    res.redirect('/admin/admin')
 };
 
-const delete_id = (req,res) => {
+const delete_id = async (req,res) => {
     const id = req.params.id
     
-    res.send(`Debería poder eliminar el id ${id}`)
+    await itemsServices.deleteItem(id);
+    res.redirect('/admin/admin')
 };
 
 const login = (req,res) => {
-    res.send("Debería devolver la página de login")
+    res.render('./auth/login', {
+        view:{
+            title:"Login | Funkoshop"
+    }})
 };
 
 const login_post = (req,res) => {
@@ -44,7 +82,10 @@ const login_post = (req,res) => {
 };
 
 const register = (req,res) => {
-    res.send("Debería devolver la página de register")
+    res.render('./auth/register', {
+        view:{
+            title:"Register | Funkoshop"
+    }})
 };
 
 const register_post = (req,res) => {
