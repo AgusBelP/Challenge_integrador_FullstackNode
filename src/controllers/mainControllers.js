@@ -1,8 +1,17 @@
-const main = (req,res) => {
+const licencesServices = require('../services/licencesServices');
+const itemsServices = require('../services/itemsServices');
+
+const main = async (req,res) => {
+
+    const collections = await  licencesServices.collections();
+    const random = await itemsServices.getItemsRandom();
+
     res.render('home', {
         view:{
             title: "Home | Funkoshop"
-        }
+        },
+        collections,
+        random
     })
 };
 

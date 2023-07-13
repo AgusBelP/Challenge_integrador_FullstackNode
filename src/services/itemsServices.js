@@ -2,19 +2,34 @@ const itemsModel = require('../model/itemsModel')
 
 const getItems = async () => {
     return await itemsModel.getAll()
-}
-
-const getItemView = async (id) => {
-    return await itemsModel.getOneView({item_id : id})
-}
+};
 
 const getItem = async (id) => {
     return await itemsModel.getOne({item_id : id})
-}
+};
 
-const itemRelated = async (licence_id) => {
-    return await itemsModel.getRelated({licence_id : licence_id})
-}
+const getItemsView = async () => {
+    return await itemsModel.getAllView()
+};
+
+const getItemView = async (id) => {
+    return await itemsModel.getOneView({item_id : id})
+};
+
+const itemRelated = async (licence_name) => {
+    return await itemsModel.getRelated({licence_name : licence_name})
+};
+
+/* Ordeno el array de todos los items de forma aleatoria */
+const getItemsRandom = async () => {
+    const itemsRandom = await itemsModel.getAllView();
+    itemsRandom.sort(() => Math.random() - 0.5) 
+    /* itemsView.sort((a,b) => a.item_name.localeCompare(b.item_name)) */
+
+    return itemsRandom;
+
+};
+
 
 const createItem = async (item) =>{
     const itemSchema = {
@@ -33,7 +48,7 @@ const createItem = async (item) =>{
 
     return await itemsModel.create([Object.values(itemSchema)]);
 
-}
+};
 
 const editItem = async (item,id) => {
      const itemSchema = {
@@ -55,13 +70,15 @@ const editItem = async (item,id) => {
 
 const deleteItem = async (id) => {
     return await itemsModel.deleteOne({item_id : id})
-}
+};
 
 module.exports = {
     getItems,
-    getItemView,
     getItem,
+    getItemsView,
+    getItemView,
     itemRelated,
+    getItemsRandom,
     createItem,
     editItem,
     deleteItem

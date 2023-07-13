@@ -15,10 +15,10 @@ const getAll = async () => {
     }
 };
 
-const getOneView = async (params) => {
+const getOne = async (params) => {
     try{
         
-        const [rows] = await conn.query('SELECT * FROM products WHERE ?', params);
+        const [rows] = await conn.query('SELECT * FROM items WHERE ?', params);
 
         return rows;
     }
@@ -30,10 +30,27 @@ const getOneView = async (params) => {
     }
 };
 
-const getOne = async (params) => {
+
+
+const getAllView = async () => {
     try{
         
-        const [rows] = await conn.query('SELECT * FROM items WHERE ?', params);
+        const [rows] = await conn.query('SELECT * FROM products');
+
+        return rows;
+    }
+    catch (error) {
+        throw error;
+    }
+    finally{
+        conn.releaseConnection();
+    }
+};
+
+const getOneView = async (params) => {
+    try{
+        
+        const [rows] = await conn.query('SELECT * FROM products WHERE ?', params);
 
         return rows;
     }
@@ -118,8 +135,9 @@ const deleteOne = async (params) => {
 
 module.exports = {
     getAll,
-    getOneView,
     getOne,
+    getAllView,
+    getOneView,
     getRelated,
     create,
     edit,

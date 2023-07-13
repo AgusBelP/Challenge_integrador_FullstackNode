@@ -6,7 +6,7 @@
       <label for="categoria" class="form-title">Categoría:</label>
       <select name="categoria" id="categoria" class="form-box1" required>
         <% categories.forEach((categories,i) => { %>
-        <option value="<%= i+1 %>" <% if (item.category_id === categories.category_id) { %>selected<% } %>>
+        <option value="<%= i+1 %>" <% if (item.category_id === categories.category_id) { %> selected <% } %>>
           <%= categories.category_name %></option>
         <% });%>
       </select>
