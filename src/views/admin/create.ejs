@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <main class="create container">
   <h2 class="create__title">CREAR NUEVO ITEM</h2>
-  <form class="form" action="/admin/create" method="POST" enctype="application/x-www-form-urlencoded">
+  <form class="form" action="/admin/create" method="POST" enctype="multipart/form-data">
     <div class="form-spacing">
       <label for="categoria" class="form-title">Categoría:</label>
       <select name="categoria" id="categoria" class="form-box1" required>
@@ -80,8 +80,10 @@
       </select>
     </div>
     <div class="form-spacing">
-      <label for="imagenes" class="form-title">Imágenes:</label>
-      <input type="file" name="imagenes" id="imagenes" value="Elegir archivos" class="form-files" multiple />
+      <label for="imagenes" class="form-title_small">Imagen principal:</label>
+      <input type="file" name="imagen_principal" id="imagenes" value="Elegir archivos" class="form-files" />
+      <label for="imagenes" class="form-title_small">Imagen del dorso:</label>
+      <input type="file" name="imagen_dorso" id="imagenes" value="Elegir archivos" class="form-files" />
     </div>
     <div class="form-spacing">
       <input type="submit" value="Agregar Producto" class="form-add" />

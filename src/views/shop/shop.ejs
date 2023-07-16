@@ -63,8 +63,14 @@
           <a class="item-card__link" href="/shop/item/<%= items.item_id %>">
             <picture class="card-item__cover">
               <span class="card-item__tag">Nuevo</span>
-              <img class="card-item__img--front" src="<%= items.img_front %>" alt="<%= items.item_description %>" />
-              <img class="card-item__img--back" src="<%= items.img_back %>" alt="<%= items.item_description %>" />
+              <img
+                class="card-item__img--front"
+                src="/img/<%= items.licence_file_path %>/<%= items.img_front %>"
+                alt="<%= items.item_description %>" />
+              <img
+                class="card-item__img--back"
+                src="/img/<%= items.licence_file_path %>/<%= items.img_back %>"
+                alt="<%= items.item_description %>" />
             </picture>
             <div class="card-item__content">
               <p class="card-item__licence"><%= items.licence_name %></p>

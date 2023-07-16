@@ -30,8 +30,7 @@ const getItemsRandom = async () => {
 
 };
 
-
-const createItem = async (item) =>{
+const createItem = async (item, files) =>{
     const itemSchema = {
         category_id: item.categoria,
         licence_id: item.licencia,
@@ -42,13 +41,14 @@ const createItem = async (item) =>{
         stock: item.stock,
         discount: item.descuento,
         instalment_plan: item.cuotas,
-        img_front: '/imagen_front',
-        img_back: '/imagen_back',
+        img_front: '/'+files.imagen_principal[0].filename,
+        img_back: '/'+files.imagen_dorso[0].filename ,
     };
 
     return await itemsModel.create([Object.values(itemSchema)]);
 
-};
+}
+
 
 const editItem = async (item,id) => {
      const itemSchema = {

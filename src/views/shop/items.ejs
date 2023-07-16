@@ -15,8 +15,14 @@
       <p class="items__page-payment"><a href="">Ver métodos de pago</a> - 3 CUOTAS SIN INTERÉS</p>
     </article>
     <picture class="card-item__cover">
-      <img class="card-item__img--front" src="<%= item.img_front %>" alt="<%= item.description %>" />
-      <img class="card-item__img--back" src="<%= item.img_back %>" alt="<%= item.description %>" />
+      <img
+        class="card-item__img--front"
+        src="/img/<%= item.licence_file_path %>/<%= item.img_front %>"
+        alt="<%= item.description %>" />
+      <img
+        class="card-item__img--back"
+        src="/img/<%= item.licence_file_path %>/<%= item.img_back %>"
+        alt="<%= item.description %>" />
     </picture>
   </section>
   <section class="related__products container">
@@ -32,11 +38,11 @@
                   <span class="card-item__tag">Nuevo</span>
                   <img
                     class="card-item__img--front"
-                    src="<%= related.img_front %>"
+                    src="/img/<%= related.licence_file_path %>/<%= related.img_front %>"
                     alt="<%= related.item_description %>" />
                   <img
                     class="card-item__img--back"
-                    src="<%= related.img_back %>"
+                    src="/img/<%= related.licence_file_path %>/<%= related.img_back %>"
                     alt="<%= related.item_description %>" />
                 </picture>
                 <div class="card-item__content">

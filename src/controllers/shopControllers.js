@@ -1,7 +1,7 @@
 const itemsServices = require('../services/itemsServices')
 
 const shop = async (req,res) => {
-    const items = await itemsServices.getItems();
+    const items = await itemsServices.getItemsView();
 
     res.render('./shop/shop', {
         view:{

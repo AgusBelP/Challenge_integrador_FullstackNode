@@ -104,11 +104,11 @@
     </div>
     <div class="form-spacing">
       <picture>
-        <img src="<%= item.img_front %>" alt="<%=item.item_description %>" />
+        <img src="/img/<%= item.licence_file_path %>/<%= item.img_front %>" alt="<%=item.item_description %>" />
         <p>Frente</p>
       </picture>
       <picture>
-        <img src="<%= item.img_back %>" alt="<%=item.item_description %>" />
+        <img src="/img/<%= item.licence_file_path %>/<%= item.img_back %>"  alt="<%=item.item_description %>" />
         <p>Dorso</p>
       </picture>
     </div>

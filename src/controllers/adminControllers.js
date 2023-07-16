@@ -32,14 +32,16 @@ const create = async (req,res) => {
 
 const create_post = async (req,res) => {
     const item = req.body;
-    await itemsServices.createItem(item);
+    const files = req.files;
+    /* console.log(files);*/
+    await itemsServices.createItem(item,files);
     res.redirect('/admin/admin')
 };
 
 const edit = async (req,res) => {
     const id = req.params.id;
 
-    const item = await itemsServices.getItem(id);
+    const item = await itemsServices.getItemView(id);
     const categories = await  categoriesServices.categories();
     const licences = await  licencesServices.licences()
 
