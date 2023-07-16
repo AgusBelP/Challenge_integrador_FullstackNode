@@ -10,9 +10,5 @@ router.post("/create", uploadFile.fields([{name: "imagen_principal", max:1},{nam
 router.get("/edit/:id", adminController.edit);
 router.put("/edit/:id", adminController.edit_put);
 router.delete("/delete/:id", adminController.delete_id);
-router.get("/login", adminController.login);
-router.post("/login", adminController.login_post);
-router.get("/register", adminController.register);
-router.post("/register", adminController.register_post);
 
 module.exports = router;
