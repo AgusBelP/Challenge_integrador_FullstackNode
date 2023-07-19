@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 <main class="register container">
   <h2 class="register__title">INGRESAR A MI CUENTA</h2>
-  <form action="" class="login__form">
+  <form action="" class="login__form" method="post">
     <div class="login__form-spacing">
       <label for="" class="register__form-title">Email:</label>
-      <input type="text" class="register__form-input" placeholder="johndoe@correo.com" />
+      <input type="text" class="register__form-input" name="email" placeholder="johndoe@correo.com" />
     </div>
     <div class="login__form-spacing">
       <label for="" class="register__form-title">Password:</label>
-      <input type="password" name="" id="" class="register__form-input" placeholder="Password" />
+      <input type="password" name="password" id="" class="register__form-input" placeholder="Password" />
     </div>
     <div class="login__submit">
       <input type="submit" value="Ingresar" class="register__form-submit" />

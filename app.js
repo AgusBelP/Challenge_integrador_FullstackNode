@@ -18,6 +18,7 @@ app.set('views', './src/views')
 const mainRoutes = require('./src/routes/mainRoutes');
 const adminRoutes = require('./src/routes/adminRoutes');
 const shopRoutes = require('./src/routes/shopRoutes');
+const authRoutes = require('./src/routes/authRoutes');
 
 // Convierte los datos recibidos por POST
 app.use(express.urlencoded());
@@ -30,5 +31,6 @@ app.use(methodOverride('_method'));
 app.use("/", mainRoutes);
 app.use("/admin", adminRoutes);
 app.use("/shop", shopRoutes); 
+app.use("/auth", authRoutes); 
 
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}`))
