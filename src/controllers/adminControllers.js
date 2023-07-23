@@ -33,7 +33,6 @@ const create = async (req,res) => {
 const create_post = async (req,res) => {
     const item = req.body;
     const files = req.files;
-    /* console.log(files);*/
     await itemsServices.createItem(item,files);
     res.redirect('/admin/admin')
 };

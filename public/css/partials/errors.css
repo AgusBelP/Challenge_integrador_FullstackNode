@@ -1,0 +1,8 @@
+.error_alert {
+  background-color: rgb(39, 193, 193);
+  font-family: var(--base-font);
+  color: var(--dark-solid);
+  font-size: var(--font-medium);
+  font-weight: 500;
+  padding: var(--spacing-8);
+}

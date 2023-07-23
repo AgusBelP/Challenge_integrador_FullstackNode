@@ -4,9 +4,21 @@ const validateInput= (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()){
-        res.status(400).send({errors: errors.array()});
+        const alert = errors.mapped();
+        console.log(alert);
+        res.render('./auth/register', {
+        view:{
+            title:"Register | Funkoshop"
+        },
+        alert
+    })
+    }else{
+        next ();
     }
-    next ();
+    
 };
 
-module.exports = validateInput;
+
+module.exports = {
+    validateInput,
+};

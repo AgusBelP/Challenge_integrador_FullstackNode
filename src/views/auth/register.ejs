@@ -2,7 +2,7 @@
 <main class="register container">
   <h2 class="register__title">CREA TU CUENTA</h2>
   <h3 class="register__subtitle">Completa el formulario para ser parte del mundo de los Funkos</h3>
-  <form action="" class="register__form">
+  <form class="register__form" action="/auth/register" method="POST" enctype="application/x-www-form-urlencoded">
     <div class="register__form-spacing">
       <label for="name" class="register__form-title">Nombre:</label>
       <input type="text" name="name" id="name" placeholder="John" class="register__form-input" required />
@@ -21,6 +21,9 @@
         class="register__form-input"
         required />
     </div>
+    <% if(typeof alert.email != 'undefined'){ %>
+    <div class="error_alert"><%= alert.email.msg %></div>
+    <% }%>
     <div class="register__form-spacing">
       <label for="password" class="register__form-title">Contraseña:</label>
       <input
@@ -32,6 +35,9 @@
         class="register__form-input"
         required />
     </div>
+    <% if(typeof alert.password != 'undefined'){ %>
+    <div class="error_alert"><%= alert.password.msg %></div>
+    <% }%>
     <div class="register__form-spacing">
       <label for="repassword" class="register__form-title">Repita contraseña:</label>
       <input
@@ -43,6 +49,9 @@
         class="register__form-input"
         required />
     </div>
+    <% if(typeof alert.repassword != 'undefined'){ %>
+    <div class="error_alert"><%= alert.repassword.msg %></div>
+    <% }%>
     <div class="register__form-spacing">
       <input type="submit" value="Registrar" class="register__form-submit" />
       <div>
