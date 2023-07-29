@@ -1,14 +1,17 @@
 const authServices = require ('../services/authServices')
 
 const login = (req,res) => {
+    const alert = []
+
     res.render('./auth/login', {
         view:{
             title:"Login | Funkoshop"
-    }})
+        },alert
+    })
 };
 
 const login_post = (req,res) => {
-    res.send("Debería enviar datos a la página de login")
+    res.redirect('/admin/admin')
     
 };
 

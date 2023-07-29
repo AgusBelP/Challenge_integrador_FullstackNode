@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const authModel = require('../model/authModel')
 const validator = require('../middlewares/validator');
-const { check, body } = require('express-validator');
+const { check } = require('express-validator');
+
+const bcrypt = require('bcrypt');
 
 const registerValidation = [
-    check('email').isEmail().withMessage('Necesito que ingreses un correo válido'),
-    check('email').trim().not().isEmpty().withMessage('Este es un campo obligatorio'),
     check('email')
+    .isEmail().withMessage('El correo ingresado no es válido')
+    .trim().not().isEmpty().withMessage('Este es un campo obligatorio')
     .custom(async value =>{
         let user_exists = await authModel.userExists({user_email: value});
         if(user_exists != ""){
@@ -18,12 +20,31 @@ const registerValidation = [
     .isAlphanumeric().withMessage('La contraseña debe contener letras y un número'),
     check('repassword')
     .custom((value, { req } ) => value === req.body.password).withMessage('Las contraseñas ingrsadas no coinciden')
-]
+];
+
+const loginValidation = [
+    check('email')
+        .isEmail().withMessage('El correo ingresado no es válido')
+        .trim().not().isEmpty().withMessage('Este es un campo obligatorio')
+        .custom(async value =>{
+            let user_exists = await authModel.userExists({user_email: value});
+            if(user_exists == ""){
+                throw new Error('Las credenciales ingresadas no son correctas');
+            }}),
+        check('password')
+        .custom(async (value, { req }) => {
+            const passwordHash = await bcrypt.hash(value, 8);
+            const user_pass = await authModel.getPassword({user_email : req.body.email });
+            if(user_pass[0].user_password != passwordHash){
+                throw new Error('Las credenciales ingresadas no son correctas') ;
+            }
+        })
+];
 
 const authControllers = require('../controllers/authControllers');
 
 router.get("/login",authControllers.login);
-router.post("/login", authControllers.login_post);
+router.post("/login", loginValidation, validator.validateLogin, authControllers.login_post);
 router.get("/register", authControllers.register);
 router.post("/register", registerValidation, validator.validateInput, authControllers.register_post);
 

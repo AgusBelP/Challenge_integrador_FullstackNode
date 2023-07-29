@@ -5,7 +5,7 @@ const validateInput= (req, res, next) => {
 
     if (!errors.isEmpty()){
         const alert = errors.mapped();
-        console.log(alert);
+
         res.render('./auth/register', {
         view:{
             title:"Register | Funkoshop"
@@ -18,7 +18,26 @@ const validateInput= (req, res, next) => {
     
 };
 
+const validateLogin= (req, res, next) => {
+    const errorsLogin = validationResult(req);
+
+    if (!errorsLogin.isEmpty()){
+        const alert = errorsLogin.mapped();
+        
+        res.render('./auth/login', {
+        view:{
+            title:"Login | Funkoshop"
+        },
+        alert
+    })
+    }else{
+        next ();
+    }
+    
+};
+
 
 module.exports = {
     validateInput,
+    validateLogin
 };

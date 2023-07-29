@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <main class="register container">
   <h2 class="register__title">INGRESAR A MI CUENTA</h2>
-  <form action="" class="login__form" method="post">
+  <form class="login__form" action="/auth/login" method="POST" enctype="application/x-www-form-urlencoded">
     <div class="login__form-spacing">
       <label for="" class="register__form-title">Email:</label>
       <input type="text" class="register__form-input" name="email" placeholder="johndoe@correo.com" />
@@ -10,6 +10,12 @@
       <label for="" class="register__form-title">Password:</label>
       <input type="password" name="password" id="" class="register__form-input" placeholder="Password" />
     </div>
+    <!-- En eset caso se dejan las alertas una debajo de la otra para no demostrar, en el caso de un error, cuál de las dos credenciales es la que está equivocada -->
+    <% if(typeof alert.email != 'undefined'){ %>
+    <div class="error_alert"><%= alert.email.msg %></div>
+    <% }%> <% if(typeof alert.password != 'undefined' && typeof alert.email == 'undefined'){ %>
+    <div class="error_alert"><%= alert.password.msg %></div>
+    <% }%>
     <div class="login__submit">
       <input type="submit" value="Ingresar" class="register__form-submit" />
       <div>

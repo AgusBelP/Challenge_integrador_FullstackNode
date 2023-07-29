@@ -16,7 +16,21 @@ const createUser = async (params) =>{
 const userExists = async (params) => {
     try {
         const [rows] = await conn.query('SELECT * FROM users WHERE ? ', [params]);
-        console.log(rows);
+    
+        return rows;
+    } 
+    catch (error) {
+        
+    }
+    finally{
+        conn.releaseConnection();
+    }
+}
+
+const getPassword = async (params) => {
+    try {
+        const [rows] = await conn.query('SELECT user_password FROM users WHERE ? ', [params]);
+    
         return rows;
     } 
     catch (error) {
@@ -29,5 +43,6 @@ const userExists = async (params) => {
 
 module.exports = {
     createUser,
-    userExists
+    userExists,
+    getPassword
 }
