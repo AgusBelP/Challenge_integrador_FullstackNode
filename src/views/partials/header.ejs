@@ -9,6 +9,31 @@
   </head>
   <body>
     <header>
+      <% if (locals.isLogged) { %>
+      <nav class="navbar container">
+        <picture class="navbar__logo">
+          <a href="/home">
+            <img src="/img/branding/logo_light_horizontal.svg" alt="Isologotipo de la Marca Funkoshop" />
+          </a>
+        </picture>
+        <ul class="navbar__menu">
+          <li class="navbar__item">
+            <a class="navbar__link" href="/shop">TIENDA</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/admin/admin">ADMIN</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__link" href="/auth/logout">LOGOUT</a>
+          </li>
+          <li class="navbar__item">
+            <a class="navbar__cart" href="./pages/cart.html">
+              <img src="/img/icons/cart-icon.svg" alt="icono de carrito" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <% } else { %>
       <nav class="navbar container">
         <picture class="navbar__logo">
           <a href="/home">
@@ -45,6 +70,7 @@
           </li>
         </ul>
       </nav>
+      <% } %>
     </header>
   </body>
 </html>

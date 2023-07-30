@@ -1,6 +1,6 @@
-const itemsServices = require('../services/itemsServices')
-const categoriesServices = require('../services/categoriesServices')
-const licencesServices = require('../services/licencesServices')
+const itemsServices = require('../services/itemsServices');
+const categoriesServices = require('../services/categoriesServices');
+const licencesServices = require('../services/licencesServices');
 
 const admin = async (req,res) => {
     const items = await itemsServices.getItems();

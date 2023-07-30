@@ -31,21 +31,24 @@ const loginValidation = [
             if(user_exists == ""){
                 throw new Error('Las credenciales ingresadas no son correctas');
             }}),
-        check('password')
-        .custom(async (value, { req }) => {
-            const passwordHash = await bcrypt.hash(value, 8);
-            const user_pass = await authModel.getPassword({user_email : req.body.email });
-            if(user_pass[0].user_password != passwordHash){
-                throw new Error('Las credenciales ingresadas no son correctas') ;
+    check('password')
+    .custom(async (value, { req }) => {
+        const user_pass = await authModel.getPassword({user_email : req.body.email });
+        const pass_hash = user_pass[0].user_password;
+        bcrypt.compareSync(value, pass_hash, (err,res) => {
+            if(err){
+            throw new Error('Las credenciales ingresadas no son correctas') ;
             }
-        })
+        });           
+    }),
 ];
 
 const authControllers = require('../controllers/authControllers');
 
-router.get("/login",authControllers.login);
+router.get("/login", authControllers.login);
 router.post("/login", loginValidation, validator.validateLogin, authControllers.login_post);
 router.get("/register", authControllers.register);
 router.post("/register", registerValidation, validator.validateInput, authControllers.register_post);
+router.get("/logout", authControllers.logout);
 
 module.exports = router;

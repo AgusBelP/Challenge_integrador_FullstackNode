@@ -1,4 +1,5 @@
-const authServices = require ('../services/authServices')
+const authServices = require ('../services/authServices');
+const { initSession } = require('../utils/session');
 
 const login = (req,res) => {
     const alert = []
@@ -11,6 +12,8 @@ const login = (req,res) => {
 };
 
 const login_post = (req,res) => {
+    req.session.isLogged = true;
+
     res.redirect('/admin/admin')
     
 };
@@ -31,9 +34,16 @@ const register_post = async(req,res) => {
     res.redirect('/auth/login')
 };
 
+const logout = (req,res) => {
+    req.session.isLogged = false
+    res.redirect('/home')
+
+}
+
 module.exports={
     login,
     login_post,
     register,
-    register_post
+    register_post,
+    logout
 }

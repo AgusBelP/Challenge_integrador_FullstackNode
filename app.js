@@ -2,10 +2,18 @@ const express = require('express');
 const fs = require('fs');
 const app = express();
 const methodOverride = require('method-override');
+const { initSession } = require('./src/utils/session')
 
 // Llamo a la dependencia dotenv y defino el puerto de la aplicación
 require('dotenv').config();
 const port = process.env.port;
+
+// Inicio la sesión del usuario
+app.use(initSession());
+app.use((req,res,next) => {
+    res.locals.isLogged = req.session.isLogged;
+    next();
+})
 
 // Defino la carpeta de archivos estáticos
 app.use(express.static('public'));

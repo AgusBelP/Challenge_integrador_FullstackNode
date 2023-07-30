@@ -23,7 +23,7 @@ const validateLogin= (req, res, next) => {
 
     if (!errorsLogin.isEmpty()){
         const alert = errorsLogin.mapped();
-        
+
         res.render('./auth/login', {
         view:{
             title:"Login | Funkoshop"
