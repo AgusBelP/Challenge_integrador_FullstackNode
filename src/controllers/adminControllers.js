@@ -16,6 +16,8 @@ const admin = async (req,res) => {
 /* Para traer la vista de la pagina create traigo primero los datos de las tablas categories y licences, de esa forma al querer crear un item nuevo desde la base ya traigo los id de categoria y licencia y si se agregan a la base nuevas categorias o licencias el dropdown se completa automáticamente */
 
 const create = async (req,res) => {
+    const alert = []
+
     const categories = await  categoriesServices.categories();
     const licences = await  licencesServices.licences()
 
@@ -24,7 +26,8 @@ const create = async (req,res) => {
             title:"Create | Funkoshop"
     },
     categories,
-    licences
+    licences,
+    alert
 })
 };
 
@@ -32,7 +35,9 @@ const create = async (req,res) => {
 
 const create_post = async (req,res) => {
     const item = req.body;
+    console.log(item);
     const files = req.files;
+    console.log(files);
     await itemsServices.createItem(item,files);
     res.redirect('/admin/admin')
 };

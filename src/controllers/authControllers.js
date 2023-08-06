@@ -1,5 +1,4 @@
 const authServices = require ('../services/authServices');
-const { initSession } = require('../utils/session');
 
 const login = (req,res) => {
     const alert = []

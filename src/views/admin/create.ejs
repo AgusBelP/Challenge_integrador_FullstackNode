@@ -51,6 +51,7 @@
         name="precio"
         data-type="currency"
         placeholder="$0.000,00"
+        min="0"
         class="form-price"
         required />
       <label for="stock" class="form-title">Stock:</label>
@@ -80,10 +81,10 @@
       </select>
     </div>
     <div class="form-spacing">
-      <label for="imagenes" class="form-title_small">Imagen principal:</label>
-      <input type="file" name="imagen_principal" id="imagenes" value="Elegir archivos" class="form-files" />
-      <label for="imagenes" class="form-title_small">Imagen del dorso:</label>
-      <input type="file" name="imagen_dorso" id="imagenes" value="Elegir archivos" class="form-files" />
+      <label for="imagen_principal" class="form-title_small">Imagen principal:</label>
+      <input type="file" name="imagen_principal" id="img1" value="imagen_principal_funko" class="form-files" required />
+      <label for="imagen_dorso" class="form-title_small">Imagen del dorso:</label>
+      <input type="file" name="imagen_dorso" id="img2" value="imagen_dorso_funko" class="form-files" required />
     </div>
     <div class="form-spacing">
       <input type="submit" value="Agregar Producto" class="form-add" />

@@ -6,8 +6,7 @@ function initSession() {
     secret: process.env.SESSION_NAME,
     resave: false,
     saveUninitialized: true
-    })
-};
+})};
 
 module.exports = {
     initSession

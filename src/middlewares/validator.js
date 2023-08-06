@@ -1,4 +1,6 @@
 const { validationResult } = require('express-validator');
+const categoriesServices = require('../services/categoriesServices');
+const licencesServices = require('../services/licencesServices');
 
 const validateInput= (req, res, next) => {
     const errors = validationResult(req);

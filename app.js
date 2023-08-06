@@ -10,7 +10,7 @@ const port = process.env.port;
 
 // Inicio la sesión del usuario
 app.use(initSession());
-app.use((req,res,next) => {
+app.use((req, res, next) => {
     res.locals.isLogged = req.session.isLogged;
     next();
 })
